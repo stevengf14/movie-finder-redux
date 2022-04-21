@@ -1,6 +1,6 @@
-React Redux Router Saga Boilerplate
+# React Hooks Redux Router Saga
 
-This repository is created to agilize the beginning of a project and of course, you are interested in using Redux Saga & React Router. That's why I created my own easy boilerplate.
+This project is a practice of React - Hooks - React Redux - Redux Saga
 
 I'm using these powerful libraries
 
@@ -9,3 +9,16 @@ I'm using these powerful libraries
 * React Redux - https://github.com/reduxjs/react-redux 
 * React Router - https://github.com/ReactTraining/react-router
 * Axios - https://github.com/axios/axios
+
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
