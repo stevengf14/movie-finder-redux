@@ -15,12 +15,16 @@ export default ({ location, history }) => {
     const [isLooked, setIsLooked] = useState(false);
 
     useEffect(() => {
+        startDispatch()
+    });
+
+    function startDispatch(){
         const { movieName } = queryString.parse(location.search);
         if (movieName && !isLooked) {
             setIsLooked(true);
             dispatch(searchMovie({ movieName }));
         }
-    });
+    }
 
     const renderMovies = () => {
         if (movies) {
