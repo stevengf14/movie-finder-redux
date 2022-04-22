@@ -1,4 +1,3 @@
-import { get } from 'lodash';
 import { SEARCH_MOVIE_START, SEARCH_MOVIE_ERROR, SEARCH_MOVIE_COMPLETE } from '../../consts/actionTypes';
 
 const initialState = {};
@@ -6,11 +5,11 @@ const initialState = {};
 export default function (state = initialState, action) {
     switch (action.type) {
         case SEARCH_MOVIE_START:
-            return { ...state };
+            return { ...state, isLoading: true };
         case SEARCH_MOVIE_ERROR:
-            return { ...state };
+            return { ...state, isLoading: false };
         case SEARCH_MOVIE_COMPLETE:
-            return { ...state };
+            return { ...state, isLoading: false, movieResults: action.results.data };
         default:
             return { ...state };
     }

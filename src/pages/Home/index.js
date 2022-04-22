@@ -3,7 +3,7 @@ import { Container, Card, Grid, Typography, TextField, Button } from '@mui/mater
 import styles from './style';
 import { MovieIcon } from '../../icons';
 
-export default function () {
+export default function ({ history }) {
 	const [searchText, setSearchText] = useState('');
 	const classes = styles();
 
@@ -12,11 +12,11 @@ export default function () {
 	}
 
 	const handleCleanText = event => {
-
+		setSearchText('');
 	}
 
 	const handleSearchText = event => {
-
+		history.push(`/results?movieName=${searchText}`);
 	}
 
 	return (
