@@ -2,8 +2,8 @@ import { Container, CircularProgress, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { searchMovieById } from "../../redux/actions/search";
-import { movieResult as movieResultSelector } from "../../redux/selectors";
+import { searchMovieById } from "../../redux/actions/search_action";
+import { movieResult as movieResultSelector } from "../../redux/selectors/selector";
 
 export default ({ match }) => {
     const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Card, Grid, Typography, TextField, Button } from '@mui/material';
-import styles from './style';
-import { MovieIcon } from '../../icons';
+import styles from './Home_style';
+import { MovieIcon } from '../../icons/icons';
 
 export default function ({ history }) {
 	const [searchText, setSearchText] = useState('');

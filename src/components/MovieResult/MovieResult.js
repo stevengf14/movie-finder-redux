@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Grid, Typography } from '@mui/material';
 import { withRouter } from 'react-router-dom';
-import style from './style';
+import style from './MovieResult_style';
 
 function MovieResult({ Title, Year, Type, imdbID, Poster, history }) {
     const classes = style();

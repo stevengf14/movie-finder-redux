@@ -7,7 +7,8 @@ import {
     SEARCH_MOVIE_BY_ID_ERROR,
     SEARCH_MOVIE_BY_ID_START
 } from '../../consts/actionTypes';
-import { apiCall } from '../api';
+
+import { apiCall } from '../api/apiCall';
 
 export function* searchMovie({ payload }) {
     try {

@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import queryString from 'query-string';
 
-import { searchMovie } from '../../redux/actions/search'
-import { movieResults, isSearchLoading } from "../../redux/selectors";
-import MovieResult from "../../components/MovieResult";
+import { searchMovie } from '../../redux/actions/search_action'
+import { movieResults, isSearchLoading } from "../../redux/selectors/selector";
+import MovieResult from "../../components/MovieResult/MovieResult";
 
 export default ({ location }) => {
 
