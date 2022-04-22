@@ -15,9 +15,9 @@ export default makeStyles({
     },
     cardContainer: {
         flexDirection: 'column',
-        width: 400,
-        height: 200,
-        padding: '2rem',
+        width: 600,
+        height: 300,
+        padding: '3rem',
         ...centeredStyleObj
     },
     title: {
@@ -30,12 +30,13 @@ export default makeStyles({
         width: '90%'
     },
     searchButton: {
-        marginLeft: 'r5em'
+        marginLeft: '1rem'
     },
     buttonsContainer: {
         marginTop: '.5rem'
     },
     movieIcon: {
-        fontSize: '4rem'
+        paddingLeft: '1rem',
+        fontSize: '5rem'
     }
 });

@@ -1,17 +1,17 @@
-import { Container, CircularProgress } from "@mui/material";
+import { Container, CircularProgress, Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import queryString from 'query-string';
 
 import { searchMovie } from '../../redux/actions/search_action'
-import { movieResults, isSearchLoading } from "../../redux/selectors/selector";
+import { movieResults } from "../../redux/selectors/selector";
 import MovieResult from "../../components/MovieResult/MovieResult";
+import HomeIcon from "../../icons/HomeIcon";
 
-export default ({ location }) => {
+export default ({ location, history }) => {
 
     const dispatch = useDispatch();
     const movies = useSelector(state => movieResults(state));
-    const isLoading = useSelector(state => isSearchLoading(state));
     const [isLooked, setIsLooked] = useState(false);
 
     useEffect(() => {
@@ -30,8 +30,16 @@ export default ({ location }) => {
         }
     };
 
+    const handleHome = event => {
+		history.push('/');
+	}
+
     return (
         <Container>
+            <Button onClick={handleHome}>
+                <HomeIcon />
+                Home
+            </Button>
             {renderMovies()}
         </Container>
     )

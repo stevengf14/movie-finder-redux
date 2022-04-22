@@ -5,6 +5,7 @@ import { MovieIcon } from '../../icons/icons';
 
 export default function ({ history }) {
 	const [searchText, setSearchText] = useState('');
+	const [isHidden, setIsHidden] = useState(true);
 	const classes = styles();
 
 	const handleSearchTextChange = event => {
@@ -16,7 +17,13 @@ export default function ({ history }) {
 	}
 
 	const handleSearchText = event => {
-		history.push(`/results?movieName=${searchText}`);
+		if (searchText === '') {
+			setIsHidden(false);
+		} else {
+			setIsHidden(true);
+			history.push(`/results?movieName=${searchText}`);
+		}
+
 	}
 
 	return (
@@ -24,7 +31,7 @@ export default function ({ history }) {
 			<Card className={classes.cardContainer}>
 				<Grid container className={classes.titleGridContainer}>
 					<Grid>
-						<Typography className={classes.title}>Welcome!</Typography>
+						<Typography className={classes.title}><strong>Find your movie!</strong></Typography>
 					</Grid>
 					<Grid>
 						<MovieIcon className={classes.movieIcon} />
@@ -35,10 +42,10 @@ export default function ({ history }) {
 					placeholder="Search..."
 					className={classes.TextFieldSearch}
 					onChange={handleSearchTextChange} />
-				<Grid className={classes.buttonsContainer}>
+				<Grid className={classes.buttonsContainer} >
 					<Button
 						variant="contained"
-						color="grey"
+						color="secondary"
 						onClick={handleCleanText}>
 						Clean
 					</Button>
@@ -46,12 +53,12 @@ export default function ({ history }) {
 						variant="contained"
 						className={classes.searchButton}
 						color="primary"
-						size="large"
 						onClick={handleSearchText}>
 						Search
 					</Button>
 				</Grid>
 			</Card>
+			<Typography color="secondary" hidden={isHidden}>Textbox is empty!</Typography>
 		</Container>
 	);
 }
